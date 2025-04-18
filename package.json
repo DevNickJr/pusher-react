@@ -1,0 +1,42 @@
+{
+  "name": "pusher-react",
+  "version": "1.0.0",
+  "description": "Lightweight React hooks for Pusher (with client SDK pattern)",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "author": "Nicholas Duadei (DevNick)",
+  "license": "MIT",
+  "scripts": {
+    "dev": "tsup --watch",
+    "build": "tsup"
+  },
+  "keywords": [
+    "react",
+    "nextjs",
+    "pusher",
+    "pusher client",
+    "real-time",
+    "websockets",
+    "real-time chat",
+    "presence channel",
+    "pusher sdk",
+    "react hooks",
+    "react pusher",
+    "react real-time"
+  ],
+  "devDependencies": {
+    "pusher-js": "^8.4.0",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.3"
+  },
+  "peerDependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "pusher-js": "^8.4.0"
+  }
+}

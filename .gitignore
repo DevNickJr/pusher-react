@@ -1,0 +1,9 @@
+dist/
+node_modules/
+tsconfig.json
+tsup.config.ts
+logs/
+*.log
+*.log.*
+*.out
+*.env
