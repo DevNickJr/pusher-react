@@ -1,6 +1,6 @@
-# 📡 pusher-react
+# 📡 react-pusher-client
 
-[![npm version](https://img.shields.io/npm/v/pusher-react?color=crimson&label=npm&logo=npm)](https://www.npmjs.com/package/pusher-react)
+[![npm version](https://img.shields.io/npm/v/react-pusher-client?color=crimson&label=npm&logo=npm)](https://www.npmjs.com/package/react-pusher-client)
 [![License](https://img.shields.io/github/license/devnickjr/pusher-react?color=blue)](https://github.com/devnickjr/pusher-react/blob/main/LICENSE)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/devnickjr/pusher-react/ci.yml?branch=main&label=build)](https://github.com/devnickjr/pusher-react/actions)
 [![GitHub stars](https://img.shields.io/github/stars/devnickjr/pusher-react?style=social)](https://github.com/devnickjr/pusher-react/stargazers)
@@ -24,7 +24,7 @@ A lightweight React/Next.js wrapper for [Pusher](https://pusher.com/) that simpl
 ## 📦 Installation
 
 ```bash
-npm install pusher-react pusher-js
+npm install react-pusher-client pusher-js
 ```
 
 ---
@@ -36,7 +36,7 @@ npm install pusher-react pusher-js
 The first step is to initialize Pusher by providing your Pusher Key and optionally configuring the options (typically in a top-level component).
 
 ```javascript
-import { initPusher } from 'pusher-react';
+import { initPusher } from 'react-pusher-client';
 // Initialize Pusher in your app
 initPusher(process.env.NEXT_PUBLIC_PUSHER_KEY!, {
   cluster: 'your-cluster',
@@ -49,9 +49,8 @@ After initializing Pusher, you can use the provided hooks to interact with Pushe
 
 ## API Reference 📚
 
-```typescript
-    initPusher(key: string, options?: Pusher.Options) 🔧
-```
+# initPusher(key: string, options?: Pusher.Options) 🔧
+
 Description: Initializes the Pusher client with the provided key and optional configuration. This function must be called once at the entry point of your app, before using any other hook.
 
 # Parameters:
@@ -63,17 +62,17 @@ options (optional): Additional configuration options for Pusher (e.g., cluster, 
 # Usage:
 
 ```typescript
-import { initPusher } from 'pusher-react';
+import { initPusher } from 'react-pusher-client';
 
 // Initialize the Pusher client
 initPusher('your-pusher-key', {
   cluster: 'your-cluster',
 });
 ```
+---
 
-```typescript
-    usePusherEvent<T>(channelName: string, eventName: string): T | null 🔄
-```
+# usePusherEvent<T>(channelName: string, eventName: string): T | null 🔄
+
 Description: A hook that listens for events on a specified Pusher channel and returns the event data.
 
 Parameters:
@@ -89,7 +88,7 @@ The event data (T) received from Pusher, or null if no data is received.
 # Usage:
 
 ```typescript
-import { usePusherEvent } from 'pusher-react';
+import { usePusherEvent } from 'react-pusher-client';
 
 const message = usePusherEvent<{ user: string; message: string }>('chat', 'new-message');
 
@@ -106,9 +105,8 @@ return (
 );
 ```
 
-```typescript
-usePusherConnection(): string 🌐
-```
+# usePusherConnection(): string 🌐
+
 Description: A hook that tracks the Pusher connection state. The connection state can be one of the following:
 
 connecting
@@ -128,12 +126,15 @@ The current connection state as a string.
 # Usage:
 
 ```typescript
-import { usePusherConnection } from 'pusher-react';
+import { usePusherConnection } from 'react-pusher-client';
 
 const connectionStatus = usePusherConnection();
 
 return <p>Connection Status: {connectionStatus}</p>;
-usePresenceChannel(channelName: string): PresenceMember[] 🧑‍🤝‍🧑
+```
+
+# usePresenceChannel(channelName: string): PresenceMember[] 🧑‍🤝‍🧑
+
 Description: A hook that listens for updates on a Presence Channel and returns the list of online members. Presence channels are used to track users in real-time.
 ```
 
@@ -148,7 +149,7 @@ An array of presence members. Each member has an id and other custom properties.
 # Usage:
 
 ```typescript
-import { usePresenceChannel } from 'pusher-react';
+import { usePresenceChannel } from 'react-pusher-client';
 
 const onlineUsers = usePresenceChannel('chat');
 

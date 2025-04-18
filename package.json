@@ -1,5 +1,5 @@
 {
-  "name": "pusher-react",
+  "name": "react-pusher-client",
   "version": "1.0.0",
   "description": "Lightweight React hooks for Pusher (with client SDK pattern)",
   "main": "dist/index.js",
