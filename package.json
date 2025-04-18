@@ -1,6 +1,6 @@
 {
   "name": "react-pusher-client",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Lightweight React hooks for Pusher (with client SDK pattern)",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -26,17 +26,18 @@
     "react real-time"
   ],
   "devDependencies": {
-    "pusher-js": "^8.4.0",
+    "@types/node": "^22.14.1",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
+    "pusher-js": "^8.4.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "tsup": "^8.4.0",
     "typescript": "^5.8.3"
   },
   "peerDependencies": {
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "pusher-js": "^8.4.0"
+    "pusher-js": "^8.0.0",
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
   }
 }
