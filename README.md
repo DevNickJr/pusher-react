@@ -39,7 +39,7 @@ The first step is to initialize Pusher by providing your Pusher Key and optional
 import { initPusher } from 'react-pusher-client';
 // Initialize Pusher in your app
 initPusher(process.env.NEXT_PUBLIC_PUSHER_KEY!, {
-  cluster: 'your-cluster',
+  cluster: process.env.NEXT_PUBLIC_PUSHER_CLUSTER!,
 });
 ```
 2. Using Hooks 📌
@@ -201,7 +201,7 @@ You should set the following environment variables in your .env.local (or .env) 
 
 ```bash
 NEXT_PUBLIC_PUSHER_KEY=your-pusher-key
-NEXT_PUBLIC_PUSHER_CLUSTER=your-cluster
+NEXT_PUBLIC_PUSHER_CLUSTER!=your-cluster
 ```
 This will make sure the Pusher key and cluster are accessible throughout your app, especially during development and production builds.
 

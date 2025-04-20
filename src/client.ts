@@ -21,9 +21,23 @@ export const initPusher = (key: string, options: PusherTypes.Options | { cluster
     }
   }
   pusherClient = new Pusher(key, options);
+
+  pusherClient.connection.bind("error", function (err: { error: { data: { code: number } } }) {
+    if (err.error.data.code === 4004) {
+      console.log(">>> detected limit error");
+    }
+  });
+
+  return pusherClient;
 };
 
 export const getPusher = () => {
-  if (!pusherClient) throw new Error('Pusher has not been initialized. Call initPusher first.');
+  if (!pusherClient) {
+    console.warn('Pusher not initialized');
+    return null; // or throw, depending on your use case
+  }
   return pusherClient;
 };
+
+
+

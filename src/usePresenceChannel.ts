@@ -12,6 +12,7 @@ export function usePresenceChannel(channelName: string): PresenceMember[] {
 
   useEffect(() => {
     const pusher = getPusher();
+    if (!pusher) return;
     const channel = pusher.subscribe(`presence-${channelName}`) as PusherType.PresenceChannel;
 
     const update = () => {

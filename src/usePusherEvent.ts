@@ -6,6 +6,8 @@ export function usePusherEvent<T = any>(channelName: string, eventName: string):
 
   useEffect(() => {
     const pusher = getPusher();
+    
+    if (!pusher) return; 
     const channel = pusher.subscribe(channelName);
     const handler = (data: T) => setData(data);
 
